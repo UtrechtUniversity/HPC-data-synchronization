@@ -2,7 +2,7 @@
 
 In order to keep a clear overview of the most recent versions of your data and scripts, it is recommended to use one central storage facility in your workflow, such as YODA, Surfdrive, or a data archive. You can access the data from any working station (e.g. your own laptop) And when you do analyses on a HPC platform, you can transfer data from the storage facility to the HPC system and when your job is done you transfer the output back to storage. 
 
-<img src="./pictures/example_workflow.jpg" alt="alt text" width="600" height="400">
+<img src="./pictures/example_workflow.jpg" alt="alt text" width="550" height="400">
 
 ## Storage
 YODA (developed at the UU) is a tool that can be used as this central storage facility (https://yoda.sites.uu.nl/home/introduction-to-yoda-2/). YODA is built on state-of-the-art data storage and transfer technology and is suitable for a full range from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets. Yoda is not only a handy tool for long-term and secure storage of data; it is also possible to synchronize data to various platforms at very high transfer speeds. Alternatives are cloud storage platforms such as Surfdrive (SURFsara) and Google Drive (commercial), or Data-Archive (SURFsara).
