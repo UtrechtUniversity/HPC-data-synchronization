@@ -10,12 +10,12 @@ Data transfer and synchronization; ‘drag and drop’ versus command line tools
 For users that are only used to working with Windows or Apple computers, tools are available to connect to remote data storage as well as storage systems of HPC platforms and manually transfer files using ‘drag and drop’ principles. Open source tools in this category are Winscp and Cyberduck, or the more versatile MobaXterm, which can also be used for login in to HPC platforms. These tools are solid and intuitive for beginning users, but also somewhat slow which becomes relevant when you frequently need to transfer many gigabytes of data.
 For users that are experienced with using command line and/or users that need to transfer large amounts of data, command line tools exist that are more efficient. The above-mentioned storage system YODA is typically accessed via ‘icommands’. Another very versatile tool that can be used in combination with many storage platforms is ‘Rclone’. These tools can be operated directly on the HPC platform and transfer commands can be incorporated in job scripts. 
 
-Next: [Evaluation of storage and transfer tools](./docs/Evaluation.md)
+Next: [Evaluation of storage and transfer tools](./Evaluation.md)
 
 Links:
-[Main page](./README.md)
-[Yoda staging](./docs/Yoda.md)
-[Surfdrive staging](./docs/surfdrive.md)
-[Archive staging](./docs/Archive.md)
+[Main page](../README.md)
+[Yoda staging](./Yoda.md)
+[Surfdrive staging](./surfdrive.md)
+[Archive staging](./Archive.md)
 
 
