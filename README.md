@@ -14,4 +14,5 @@ For questions and support contact Research IT via `info.rdm@uu.nl`
 A typical workflow for HPC calculations is outlined in the [Workflow](./Workflow.md) section. The different tools that are available are evaluated and discussed in the section [Evaluation of storage and transfer tools](./Evaluation.md). Instructions and automated scripts for data synchronization and transfer are available for the storage platforms that are explored in this test: I) [Yoda staging](./Yoda.md), II) [Surfdrive staging](./surfdrive.md), III) [Archive staging](./Archive.md)
 
 
-Next: [Typical workflow](./Workflow.md)
+Next: [Typical workflow](./workflow.md)
+
