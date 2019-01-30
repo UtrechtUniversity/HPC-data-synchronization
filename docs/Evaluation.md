@@ -26,9 +26,9 @@ More background on icommands and instructions for usage of icommands can be foun
 
 Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
 
-Transfer speeds:
+Transfer speeds in MB/s:
 
-<img src="./pictures/irods.png" alt="alt text" width="217" height="189">
+<img src="./pictures/irods.png" alt="alt text" width="322" height="321">
 
 
 
