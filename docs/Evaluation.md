@@ -15,30 +15,51 @@ We evaluated transfer speeds between (to and from) several storage platforms (el
 2. the [UBC cluster](https://wiki.bioinformatics.umcutrecht.nl/HPC) that is based at the UMC.
 
 
-### Yoda
-For an introduction to Yoda the reader is referred to [this page](https://yoda.sites.uu.nl/home/introduction-to-yoda-2/), where the most important information can be found. In short: Yoda is based on iRODS which is software to manage data and metadata. Yoda has multiple components. One is a research area where data can be stored that still needs to be analyzed. Furthermore, there is a Vault, where data can be securely stored for a longer period. 
-It is possible to store very large amounts of data on Yoda, but also small datasets can be transferred to and from local working stations and HPC environments for analyses, which makes Yoda a very versatile tool that is suitable for a full range of users from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets.
+## Yoda
+For an introduction to Yoda the reader is referred to [this page](https://yoda.sites.uu.nl/home/introduction-to-yoda-2/). In short: Yoda is based on iRODS which is software to manage data and metadata. Yoda has multiple components areas available to the user. One is a research area where data can be stored that still needs to be analyzed. Furthermore, there is a Vault, where data can be securely stored for a longer period. 
+It is possible to store very large amounts of data on Yoda, but also small datasets can be transferred to and from local working stations and HPC environments for analyses, which makes Yoda a very versatile tool that is suitable for a full range of users from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets. 
 
 **Data Transfer**  
-The recommended tool for data transfer is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). 
+The recommended tool for data transfer between Yoda and HPC systems is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). 
+
+With icommands, individual files are transferred over multiple threads, which results in high transfer speeds, even when transferring one large file.
 
 More background on icommands and instructions for usage of icommands can be found [here](./Yoda.md).
 
-Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
+For availability of data on your local working station, it is possible to mount your Yoda usergroups as a remote network drive on the local working station ([instructions](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows/)). This mount is visible as a network drive in your windows explorer. However, when you want to do calculations with your data on your local working station, you may run into errors; the data is stored remotely and therefore not always directly accessible for calculations. To solve these issues, you need to tranfer the file to your local working station. First browse to the file location on the network drive and copy-paste it to a local folder. It is also possible to synchronize a Yoda folder with a local folder using e.g. Cyberduck or WinSCP (find instructions for Cyberduck at the bottom of  [this website](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows-using-cyberduck/)). 
 
-Transfer speeds in MB/s:
+Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
+
+In the table below you can see the transfer speeds for the different test scenarios in MB/s:
 
 <img src="./pictures/irods.png" alt="alt text" width="322" height="321">
 
+## Surfdrive and other cloud storage platforms
+
+Many people use cloud storage platforms like Surfdrive, Dropbox, Onedrive or Google Drive. On these platforms, a user typically gets a certain amount of storage space for free. For additional storage space the user needs a paid premium account. At the time of writing, employees of the UU have access to a [Surfdrive](https://www.surfdrive.nl/) account with 250 GB of storage space. 
+
+In general, the abovementioned cloud storage platforms are very user friendly. The user has to install an application on the local working station that takes care of synchronization of files and folders between storage platform and any device where the user has installed the application. This synchronization may take a significant amount of time, depending on file size and internet connection. This functionality is therefore very useful for users with many small files, and perhaps less useful for users working with large data volumes. 
+
+**Data Transfer** 
+The recommended tool for data transfer between cloud storage platforms and HPC systems is [Rclone](https://rclone.org/). Rclone is open source, is installed on the Lisa cluster, and can be installed by the user on the UBC cluster or other HPC platforms (installation instruction provided [here](./surfdrive)). 
+
+With Rclone, multiple files can be transferred in parallel (e.g. 16 files at the same time), which results in high transfer speeds when transferring multiple files.
+
+More background on Rclone and instructions for usage of Rclone for several cloud storage platforms can be found [here](./surfdrive.md).
+
+Other options for transfer include: manual drag-and-drop transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
+
+In the table below you can see the transfer speeds between surfdrive and Lisa/UBC for the different test scenarios in MB/s:
+
+<img src="./pictures/surfdrive.png" alt="alt text" width="322" height="323">
 
 
 
+## Data-Archive
+Lisa rsync/dmftar
+UBC rclone
 
 
 
-
-Surfdrive
-
-Archive
-
+**Data Transfer** 
 
