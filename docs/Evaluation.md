@@ -20,7 +20,7 @@ For an introduction to Yoda the reader is referred to [this page](https://yoda.s
 It is possible to store very large amounts of data on Yoda, but also small datasets can be transferred to and from local working stations and HPC environments for analyses, which makes Yoda a very versatile tool that is suitable for a full range of users from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets. 
 
 **Data Transfer**  
-The recommended tool for data transfer between Yoda and HPC systems is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). 
+The recommended tool for data transfer between Yoda and HPC systems is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). Then the administrator 
 
 With icommands, individual files are transferred over multiple threads, which results in high transfer speeds, even when transferring one large file.
 
@@ -30,7 +30,7 @@ For availability of data on your local working station, it is possible to mount 
 
 Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
 
-In the table below you can see the transfer speeds for the different test scenarios in MB/s:
+In the table below you can see the transfer speeds for the different test scenarios in MB/s. Note that the transfer speeds between Yoda and Lisa are not reported. This is due to a technical issue with parallel transfer. Transfer over 1 thread is possible but is much slower than what can be expected when the issue is solved.
 
 <img src="./pictures/irods.png" alt="alt text" width="322" height="320">
 
@@ -41,7 +41,7 @@ Many people use cloud storage platforms like Surfdrive, Dropbox, Onedrive or Goo
 In general, the abovementioned cloud storage platforms are very user friendly. The user has to install an application on the local working station that takes care of synchronization of files and folders between storage platform and any device where the user has installed the application. This synchronization may take a significant amount of time, depending on file size and internet connection. This functionality is therefore very useful for users with many small files, and perhaps less useful for users working with large data volumes. 
 
 **Data Transfer**  
-The recommended tool for data transfer between cloud storage platforms and HPC systems is [Rclone](https://rclone.org/). Rclone is open source, is installed on the Lisa cluster, and can be installed by the user on the UBC cluster or other HPC platforms (installation instruction provided [here](./surfdrive)). 
+The recommended tool for data transfer between cloud storage platforms and HPC systems is [Rclone](https://rclone.org/). Rclone is open source, and it is very easy to install by the user on the UBC cluster or other HPC platforms (installation instruction provided [here](./surfdrive)). Rclone is already installed on the Lisa cluster.
 
 With Rclone, multiple files can be transferred in parallel (e.g. 16 files at the same time), which results in high transfer speeds when transferring multiple files.
 
@@ -55,13 +55,25 @@ In the table below you can see the transfer speeds between surfdrive and Lisa/UB
 
 <img src="./pictures/surfdrive.png" alt="alt text" width="322" height="320">
 
+## SURFsara Data Archive
+
+The [SURFsara Data Archive](https://userinfo.surfsara.nl/systems/shared/archive-file-system) is a storage platform, where users typically store large amounts (up to petabytes) of data for the long term. The data is stored on a tape robot which is safe relatively cheap. There is also a disk-based file system (staging area) for sending and receiving data to and from remote sources (working stations, hpc platforms, or other storage platforms), as well as sending data to the tape robot for long term storage and retrieving data from tape for analyses. 
+
+Retrieving data from tape to the staging area (before transfer to- and use on HPC clusters) is not difficult but can take a certain (unpredictable) amount of time. This has to be done before accessing the data from e.g. HPC platforms for analyses.
+
+**Data Transfer**  
+On Lisa (and Cartesius), the staging area of the archive is assible directly via the Unix path. Files can therefore be browsed and handled using standard unix commands (cp, rsync, etc), which is very convenient (instruction [here](./Archive.md)). 
+
+Rclone can be used to exchange data between other HPC platforms and the staging area of the Data archive (instructions  [here](./ArchiveUBC.md)).  
+
+The reported transfer speeds below are between the staging area of the Data Archive and the HPC platforms in MB/s. Exchange between staging area and tape robot is unpredictable and not tested.
+
+<img src="./pictures/archive.png" alt="alt text" width="322" height="320">
 
 
-## Data-Archive
-Lisa rsync/dmftar
-UBC rclone
+## Links
 
-
-
-**Data Transfer** 
+[Transfer Instructions Yoda](./Yoda.md)
+[Transfer Instructions Cloud Storage](./surfdrive.md)
+[Transfer Instructions Data Archive](./Archive.md)
 
