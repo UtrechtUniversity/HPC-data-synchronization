@@ -73,7 +73,10 @@ The reported transfer speeds below are between the staging area of the Data Arch
 
 ## Links
 
-[Transfer Instructions Yoda](./Yoda.md)
-[Transfer Instructions Cloud Storage](./surfdrive.md)
-[Transfer Instructions Data Archive](./Archive.md)
+[Transfer Instructions Yoda](./Yoda.md)  
+[Transfer Instructions Cloud Storage](./surfdrive.md)  
+[Transfer Instructions Data Archive](./Archive.md)  
+
+Previous: [Typical Workflow](./workflow.md)
+
 
