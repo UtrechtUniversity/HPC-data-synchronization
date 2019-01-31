@@ -1,16 +1,16 @@
 
-## Instructions for synchronization of Yoda and HPC folders
+## Instructions for synchronization of data on Yoda and HPC platforms
 
 When you have a Yoda account and icommands are installed on the HPC system, you have to follow the following steps (steps are elaborated below) to synchronize data:
 
-0. Make a config file
-1. Load icommands
-2. Initialize connection to iRODS
-3. Submit Synchronization commands
+1. Make a config file
+2. Load icommands
+3. Initialize connection to iRODS
+4. Submit Synchronization commands
 
-Step 0 only needs to be performed once. The other steps need to be performed every HPC session.
+Step 1 only needs to be performed once. The other steps need to be performed every HPC session.
 
-### Step 0:  Make a config file (first time only)
+### Step 1:  Make a config file (first time only)
 
 You may need help from your datamanager or contact Yoda support to obtain the information needed for the config file.
 
@@ -45,7 +45,7 @@ Copy and paste the text below to the file and fill in the fields marked with '< 
 ```
 Save and close the file.
 
-### Step 1: Load icommands (not required at UBC cluster)
+### Step 2: Load icommands (not required at UBC cluster)
 
 Load icommands on Lisa as follows:
 
@@ -53,7 +53,7 @@ Load icommands on Lisa as follows:
 module load icommands
 ```
 
-### Step 2: Initialize connection to iRODS
+### Step 3: Initialize connection to iRODS
 
 Initialize the connection to the Yoda system as follows:
 
@@ -68,7 +68,7 @@ Type `ils` to see whether the connection has been established. The output of the
 
 A short exercise can be found [here](./yoda_exercise.md).
 
-### Step 3: Submit Synchronization commands
+### Step 4: Submit Synchronization commands
 
 The irsync command is used to synchronize data between a Yoda folder and an HPC folder.
 The command is used as follows.
