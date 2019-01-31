@@ -53,7 +53,7 @@ Other options for transfer include: manual drag-and-drop transfer using [Winscp]
 
 In the table below you can see the transfer speeds between surfdrive and Lisa/UBC for the different test scenarios in MB/s:
 
-<img src="./pictures/surfdrive.png" alt="alt text" width="322" height="323">
+<img src="./pictures/surfdrive.png" alt="alt text" width="322" height="320">
 
 
 
