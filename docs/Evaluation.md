@@ -32,7 +32,7 @@ Other options for transfer include: webdav connection using [Rclone](https://rcl
 
 In the table below you can see the transfer speeds for the different test scenarios in MB/s:
 
-<img src="./pictures/irods.png" alt="alt text" width="322" height="321">
+<img src="./pictures/irods.png" alt="alt text" width="322" height="320">
 
 ## Surfdrive and other cloud storage platforms
 
