@@ -17,7 +17,9 @@ The command needs the following arguments:
 iget <source> <destination>
 ```
 
-Source should provide the filename (and if necessary the path to the file).
+Source should provide the filename, and if necessary the path to the file. The path should always be specified in relation to the current Yoda folder.
+> To be clear: you have a current working directory on the HPC system (check with `pwd`), AND at the same time a current directory on the Yoda file system. Check with the `ils` command in which folder you are currently located on Yoda.
+
 Destination should provide the destination directory on the HPC system (and if necessary and alternative filename).
 
 E.g:
