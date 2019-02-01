@@ -33,3 +33,5 @@ A list appears with different storage types:
 9.  Skip the Bearer token option by pressing enter.
 9.	Confirm your settings by typing `y`.
 
+Go back to the [main instructions page](./surfdrive.md).
+
