@@ -96,6 +96,20 @@ When you are sure you would like to proceed, remove the `--dry-run` flag and run
 ```
 rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -cPv
 ```
+`-cPv` means the following flags (options) are used:  
+`-c` skip files that are already present (compared using checksums)  
+`-P` report progress of transfer  
+`-v` verbose; increase the amount of information in the logs  
+
+By default, multiple files are transferred in parallel. You can control the number of parallel threads as well as the number of checkers that calculate the checksums (to check whether the copied files are equal on both ends). Use the following commands:
+```
+--checkers=16 --transfers=16
+```
+E.g:
+```
+rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -c --checkers=16 --transfers=16 -Pv
+```
+
 To synchronize in opposite direction: 
 
 ```
