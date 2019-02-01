@@ -85,7 +85,7 @@ E.g.
 irsync -rKV i:myfolder /my_hpc_folder
 ```
 `-rKV` means the following flags (options) are used:  
-`-r` recursive - store the whole subdirectory  
+`-r` recursive - store the whole folder including subdirectories
 `-K` Calculate and verify the checksum on the data  
 `-V` Very verbose  
 
