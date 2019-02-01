@@ -18,9 +18,9 @@ E.g:
 rsync -rPv ~/mylisafolder/ /archive/myusername/myarchivefolder/
 ```
 `-rPv` means the following flags (options) are used:  
-`-r` recursive - store the whole folder including subdirectories
-`-P` report progress of transfer
-`-v` verbose; increase the amount of information in the logs
+`-r` recursive - store the whole folder including subdirectories  
+`-P` report progress of transfer  
+`-v` verbose; increase the amount of information in the logs  
 
 Note that the contents of the folder are now in the staging area of the Archive. They will tranfer automatically to tape after a while.
 You can also issue a commands to do this. Read [this page](https://userinfo.surfsara.nl/systems/shared/software/dmf) for more info about these commands.
@@ -55,4 +55,6 @@ If you have many small files, make sure to pack them using a file archiving tool
 The above commands can be used in job scripts to transfer input data and scripts from the storage platform to the HPC cluster at the start of a job, and transfer the output back to the storage when the job has finished (and thereby clean up the HPC workspace).
 
 Further documentation about jobscripts and example scripts can be found in [this section](./jobs.md).
+
+Previous: [Evaluation of transfer options](./Evaluation.md)
 

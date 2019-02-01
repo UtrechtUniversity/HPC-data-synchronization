@@ -155,9 +155,9 @@ rclone sync /hpc/<usergroup>/<username>/Mysharedfolder Archive:Mysharedfolder -c
 ```
 
 `-cPv` means the following flags (options) are used:  
-`-c` skip files that are already present (compared using checksums)
-`-P` report progress of transfer
-`-v` verbose; increase the amount of information in the logs
+`-c` skip files that are already present (compared using checksums)  
+`-P` report progress of transfer  
+`-v` verbose; increase the amount of information in the logs  
 
 Note that the contents of the folder are now in the staging area of the Archive. They will tranfer automatically to tape after a while.
 You can also issue a commands to do this. Read [this page](https://userinfo.surfsara.nl/systems/shared/software/dmf) for more info about these commands.
