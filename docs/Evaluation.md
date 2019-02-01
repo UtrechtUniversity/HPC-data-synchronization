@@ -20,7 +20,7 @@ For an introduction to Yoda the reader is referred to [this page](https://yoda.s
 It is possible to store very large amounts of data on Yoda, but also small datasets can be transferred to and from local working stations and HPC environments for analyses, which makes Yoda a very versatile tool that is suitable for a full range of users from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets. 
 
 **Data Transfer**  
-The recommended tool for data transfer between Yoda and HPC systems is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). Then the administrator 
+The recommended tool for data transfer between Yoda and HPC systems is icommands. [icommands](https://irods.org/download/) is open source software and has to be installed on the HPC system by the system administrator (and is currently available on both the UBC- and Lisa cluster). 
 
 With icommands, individual files are transferred over multiple threads, which results in high transfer speeds, even when transferring one large file.
 
