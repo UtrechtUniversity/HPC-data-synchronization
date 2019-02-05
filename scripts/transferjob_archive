@@ -1,0 +1,29 @@
+#! /bin/bash
+
+#SBATCH -N 1              # 1 node
+#SBATCH --mem=32G         # with 32 GB memory
+#SBATCH -t 00:10:00       # for 5 minutes
+#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-user=<email address>
+
+    # When a node is available, the system logins at that node as the user who has submitted this batch script
+    # The following commands will be executed on behalf of the user
+    
+mkdir input  # make a folder where all input data is stored
+
+# Synchronize input data to HPC
+rsync -rv  /archive/myusername/myarchivefolder/ ~/input/
+
+echo Transfer input done
+
+# Perform tasks
+mkdir output
+cp ./input/* ./output/
+
+sleep 10
+
+# Synchronize output data back to storage
+rsync -rv ~/output/ /archive/myusername/myarchivefolder/
+
+echo End of Job
+
