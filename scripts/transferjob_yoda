@@ -2,9 +2,9 @@
 
 #SBATCH -N 1              # 1 node
 #SBATCH --mem=32G         # with 32 GB memory
-#SBATCH -t 00:10:00       # for 5 minutes
+#SBATCH -t 00:10:00       # for 10 minutes
 #SBATCH --mail-type=BEGIN,END
-#SBATCH --mail-user=h.j.treep@uu.nl
+#SBATCH --mail-user=<email address>
 
     # When a node is available, the system logins at that node as the user who has submitted this batch script
     # The following commands will be executed on behalf of the user
@@ -13,7 +13,7 @@ mkdir input  # make a folder where all input data is stored
 
 # Synchronize input data to HPC
 # make sure to issue the 'iinit' command at the command line before submitting a job
-irsync -N 1 -rv i:research-pochpc2/transfer1GB  ./input  
+irsync -N 1 -rv i:my_yoda_folder/input  ./input  
 
 echo Transfer input done
 
@@ -24,7 +24,7 @@ cp ./input/* ./output/
 sleep 10
 
 # Synchronize output data back to storage
-irsync -N 1 -rv ./output/ i:research-pochpc2/output 
+irsync -N 1 -rv ./output/ i:my_yoda_folder/output 
 
 echo End of Job
 
