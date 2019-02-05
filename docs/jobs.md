@@ -93,3 +93,12 @@ rclone sync "$TMPDIR"/output/ surfdrive:myoutputfolder
 echo End of Job
 ```
 
+
+## Links
+
+[Evaluation of data transfer](./Evaluation.md)
+[Transfer Instructions Yoda](./Yoda.md)  
+[Transfer Instructions Cloud Storage](./surfdrive.md)  
+[Transfer Instructions Data Archive](./Archive.md)  
+
+Previous: [Typical Workflow](./workflow.md)
