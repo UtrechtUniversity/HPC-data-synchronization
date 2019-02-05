@@ -9,10 +9,10 @@
     # When a node is available, the system logins at that node as the user who has submitted this batch script
     # The following commands will be executed on behalf of the user
     
-mkdir input  # make a folder where all input data is stored
-
 # Synchronize input data to HPC
 # make sure to issue the 'iinit' command at the command line before submitting a job
+module load icommands
+mkdir input  # make a folder where all input data is stored
 irsync -N 1 -rv i:my_yoda_folder/input  ./input  
 
 echo Transfer input done
