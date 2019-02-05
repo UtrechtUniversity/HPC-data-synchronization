@@ -11,11 +11,8 @@
     
 mkdir input  # make a folder where all input data is stored
 
-# set path to newest rclone version
-# export PATH=${HOME}/rclone-v1.45-linux-amd64/:${PATH}
-# rclone version
-
 # Synchronize input data to HPC
+# make sure to issue the 'iinit' command at the command line before submitting a job
 irsync -N 1 -rv i:research-pochpc2/transfer1GB  ./input  
 
 echo Transfer input done
