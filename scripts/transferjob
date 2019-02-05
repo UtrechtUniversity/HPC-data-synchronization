@@ -1,0 +1,33 @@
+#! /bin/bash
+
+#SBATCH -N 1              # 1 node
+#SBATCH --mem=32G         # with 32 GB memory
+#SBATCH -t 00:10:00       # for 5 minutes
+#SBATCH --mail-type=BEGIN,END
+#SBATCH --mail-user=h.j.treep@uu.nl
+
+    # When a node is available, the system logins at that node as the user who has submitted this batch script
+    # The following commands will be executed on behalf of the user
+    
+mkdir input  # make a folder where all input data is stored
+
+# set path to newest rclone version
+# export PATH=${HOME}/rclone-v1.45-linux-amd64/:${PATH}
+# rclone version
+
+# Synchronize input data to HPC
+irsync -N 1 -rv i:research-pochpc2/transfer1GB  ./input  
+
+echo Transfer input done
+
+# Perform tasks
+mkdir output
+cp ./input/* ./output/
+
+sleep 10
+
+# Synchronize output data back to storage
+irsync -N 1 -rv ./output/ i:research-pochpc2/output 
+
+echo End of Job
+
