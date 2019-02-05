@@ -96,9 +96,9 @@ echo End of Job
 
 ## Links
 
+[Typical Workflow](./workflow.md)  
 [Evaluation of data transfer](./Evaluation.md)  
 [Transfer Instructions Yoda](./Yoda.md)  
 [Transfer Instructions Cloud Storage](./surfdrive.md)  
 [Transfer Instructions Data Archive](./Archive.md)  
 
-Previous: [Typical Workflow](./workflow.md)
