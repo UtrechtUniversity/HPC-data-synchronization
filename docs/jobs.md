@@ -52,7 +52,7 @@ echo End of Job
 >2. check whether the rclone version is the same as the version you installed (see [this manual](./surfdrive))
 >3. if necessary, change the rclone paths to <name remote in rclone config>:<surfdrive folder>
 
-When using Yoda or the Data Archive, the transfer commands in the above scripts need to be replaced by the appropriate commands for these platforms. Example scripts for using [Yoda](../scripts/jobscript_yoda) and [Archive](../scripts/jobscript_archive) can be found following the links. Note that when using 'icommands' for transferring data to and from Yoda, the `iinit` command needs to be issued at the command line to generate a password for connecting before submitting the job.
+When using Yoda or the Data Archive, the transfer commands in the above scripts need to be replaced by the appropriate commands for these platforms. Example scripts for using [Yoda](./scripts/jobscript_yoda) and [Archive](./scripts/jobscript_archive) can be found following the links. Note that when using 'icommands' for transferring data to and from Yoda, the `iinit` command needs to be issued at the command line to generate a password for connecting before submitting the job.
 
 **Scratch file system**
 
