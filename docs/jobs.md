@@ -6,7 +6,7 @@ A synchronization command can be incorporated in a shell script or a job script 
 
 If you work with data volumes of a couple of Gigabytes or less, and reading and writing of data is not a main task in your workflow, you can transfer the data to your 'home file system'. This is the file system you have available upon login to Lisa. However, when working with large data volumes and reading and writing of data becomes a significant part of your workflow it may be better to use the scratch file system on the compute nodes. Examples of these 2 methods are provided below.
 
-** Home file system **
+**Home file system**
 
 Below an example job script using Surfdrive and Rclone. 
 
