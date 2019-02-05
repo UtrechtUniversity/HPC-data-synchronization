@@ -48,9 +48,9 @@ echo End of Job
 ```
 
 > In the above script:
-1. fill in your email address on the indicated place.
-2. check whether the rclone version is the same as the version you installed (see [this manual](./surfdrive))
-3. if necessary, change the rclone paths to <name remote in rclone config>:<surfdrive folder>
+>1. fill in your email address on the indicated place.
+>2. check whether the rclone version is the same as the version you installed (see [this manual](./surfdrive))
+>3. if necessary, change the rclone paths to <name remote in rclone config>:<surfdrive folder>
 
 
 
