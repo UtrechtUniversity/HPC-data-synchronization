@@ -53,7 +53,7 @@ To start the interactive menu, type:
 rclone config
 ```
 
-You will enter an interactive menu. On [this page](./rclone_archive.md), we provide instructions for completing the interactive menu.
+You will enter an interactive menu. On [this page](./rclone_yodaconf.md), we provide instructions for completing the interactive menu.
 
 ### Step 4: Submit Synchronization commands
 
