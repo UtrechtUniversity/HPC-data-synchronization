@@ -70,7 +70,7 @@ Logout again from this ssh session from UBC to archive.
 
 `logout`
 
-### Step 1: Install Rclone (first time only)
+### Step 2: Install Rclone (first time only)
 
 Before installing Rclone, first check whether Rclone is already installed on the HPC system. Type:
 
