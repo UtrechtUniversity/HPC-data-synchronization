@@ -57,7 +57,7 @@ In the table below you can see the transfer speeds between surfdrive and Lisa/UB
 
 ## SURFsara Data Archive
 
-The [SURFsara Data Archive](https://userinfo.surfsara.nl/systems/shared/archive-file-system) is a storage platform, where users typically store large amounts (up to petabytes) of data for the long term. The data is stored on a tape robot which is safe relatively cheap. There is also a disk-based file system (staging area) for sending and receiving data to and from remote sources (working stations, hpc platforms, or other storage platforms), as well as sending data to the tape robot for long term storage and retrieving data from tape for analyses. 
+The [SURFsara Data Archive](https://userinfo.surfsara.nl/systems/shared/archive-file-system) is a storage platform, where users typically store large amounts (up to petabytes) of data for the long term. The data is stored on a tape robot which is safe and relatively cheap. There is also a disk-based file system (staging area) for exchanging data with remote sources (working stations, hpc platforms, or other storage platforms), as well as sending to tape for long term storage and retrieving data from tape for analyses. 
 
 Retrieving data from tape to the staging area (before transfer to- and use on HPC clusters) is not difficult but can take a certain (unpredictable) amount of time. This has to be done before accessing the data from e.g. HPC platforms for analyses.
 
