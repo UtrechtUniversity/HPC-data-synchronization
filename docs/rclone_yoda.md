@@ -1,74 +1,12 @@
-## Instructions for synchronization of Yoda and HPC via Rclone.
+## Instructions for synchronization of data between Yoda and HPC via Rclone.
 
 To synchronize data between Yoda and HPC using Rclone, follow these steps (steps are elaborated below):
 
-1. Generate SSH keys
-2. Install Rclone
-3. Make a config file
-4. Submit Synchronization commands
+1. Install Rclone
+2. Make a config file
+3. Submit Synchronization commands
 
-Step 1 and 2 only need to be performed once. Step 3 is performed once for each storage platform that you want to connect to. Every subsequent HPC session you can directly start using Rclone for synchronization.
-
-### Step 1:  Generate SSH keys (perform once)
-
-In your SSH sessio to UBC, enter the following commands to generate ssh keys and allow automatic login using an  ssh-agent. First enter:
-
-```
-ssh-keygen -t ed25519
-```
-You will be asked to enter a file name in which to save the key. Type: 
-```
-id_rsa
-```
-Then you will be asked to enter a passphrase. Fill in passphrase (Enter a sentence you can remember easy for the pass-phrase question).
-
-Repeat passphrase.
-
-Next, view the contents of id_rsa.pub with VIM.
-
-```
-vim ./.ssh/id_rsa.pub
-```
-
-Now, in a separate window, start an ssh session to the Data Archive.
-
-In this ssh session to the Archive, create directory `.ssh`
-
-```
-mkdir .ssh
-cd .ssh
-```
-In this folder, make a file called authorized_keys
-
-```
-vim authorized_keys
-```
-Now copy the contents of the id_rsa.pub file in the other ssh session (UBC) and paste this in the authorized_keys file on the archive.
-
-Save and quit: `:wq`
-
-Now you have arranged that you have to type in the pass-phrase only once for each login-session on UBC.
-
-Type now (or after a new login)
-
-```
-ssh-agent bash
-```
-Next, type
-
-```
-ssh-add
-```
-Fill in the passphrase that you have typed above.
-
-To test if everything is setup correctly, within your SSH session to the UBC cluster, make an SSH connection to the Data Archive 
-```
-ssh <username>@archive.surfsara.nl
-```
-If all is correct, you will login directly without password or passphrase.
-Logout again from this ssh session from UBC to archive.
-
-`logout`
+Step 1 only needs to be performed once. Step 2 is performed once for each storage platform that you want to connect to. Every subsequent HPC session you can directly start using Rclone for synchronization.
 
 ### Step 1: Install Rclone (first time only)
 
@@ -105,7 +43,7 @@ check the version number in name of the the unzipped folder with `ls` and replac
 export PATH=${HOME}/rclone-v<version number>-linux-amd64/:${PATH}
 ```
 
-### Step 3:  Make a config file (perform once)
+### Step 2:  Make a config file (perform once)
 
 Rclone has an interactive menu to generate a config file for you. You need to complete this menu once for each storage platform that you want to connect to. You can use Rclone for many different types of storage platforms: check the [homepage](https://rclone.org/) for a list. Surfdrive and Research drive are based on Owncloud software. Many platforms (including Yoda, Data Archive or the U: network drive of UU student and employees) are accessible via the WebDAV protocol which is also in the list. 
 
@@ -124,17 +62,6 @@ Each time you login to the HPC system you need to run the following command from
 ```
 export PATH=${HOME}/rclone-v<version number>-linux-amd64/:${PATH}
 ```
-You also need to initialize the ssh-agent each time you login.
-
-```
-ssh-agent bash
-```
-Next, type
-
-```
-ssh-add
-```
-Fill in the passphrase you have created when you generated the hpc keys (Above).
 
 Now start synchronizing.
 
@@ -145,13 +72,13 @@ rclone sync <source> <destination> --dry-run
 ```
 E.g:
 ```
-rclone sync /hpc/<usergroup>/<username>/Mysharedfolder Archive:Mysharedfolder --dry-run
+rclone sync ./Mysharedfolder Yoda:Mysharedfolder --dry-run
 ```
 When you are sure you would like to proceed, remove the `--dry-run` flag and run the command again.
 
 
 ```
-rclone sync /hpc/<usergroup>/<username>/Mysharedfolder Archive:Mysharedfolder -cPv
+rclone sync ./Mysharedfolder Yoda:Mysharedfolder -cPv
 ```
 
 `-cPv` means the following flags (options) are used:  
@@ -159,31 +86,12 @@ rclone sync /hpc/<usergroup>/<username>/Mysharedfolder Archive:Mysharedfolder -c
 `-P` report progress of transfer  
 `-v` verbose; increase the amount of information in the logs  
 
-Note that the contents of the folder are now in the staging area of the Archive. They will tranfer automatically to tape after a while.
-You can also issue a commands to do this. Read [this page](https://userinfo.surfsara.nl/systems/shared/software/dmf) for more info about these commands.
 
-Start an SSH session to archive. Check the status of your files using the following command:
-
-```
-dmls -l
-```
-This will list your files and folders in Archive and their status. The status values are:
-```
-* REG: Regular files are user files residing only on disk
-* MIG: Migrating files are files which are being copied from disk to tape
-* DUL: Dual-state files whose data resides both online and offline
-* OFL: Offline files whose data is no longer on disk
-* UNM: Unmigrating files are files which are being copied from tape to disk
-```
-
-When you want to copy in opposite direction, first check whether the data is present in the staging area (REG).
-When a file is offline it may take a while before it will transfer back.
-
-To synchronize data from Archive to UBC, issue the following command in your SSH session to UBC:
+To synchronize data from Yoda to cluster, issue the following command in your SSH session to the cluster:
 
 
 ```
-rclone sync Archive:Mysharedfolder /hpc/<usergroup>/<username>/Mysharedfolder -cPv
+rclone sync Yoda:Mysharedfolder ./Mysharedfolder -cPv
 ```
 By default, multiple files are transferred in parallel. You can control the number of parallel threads as well as the number of checkers that calculate the checksums (to check whether the copied files are equal on both ends). Use the following commands:
 ```
