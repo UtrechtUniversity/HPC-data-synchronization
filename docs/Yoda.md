@@ -1,7 +1,8 @@
 
 ## Instructions for synchronization of data on Yoda and HPC platforms
 
-The instructions below describe the process of data transfer via icommands (recommended method). To tranfer data via webdav view this [page](./rclone_yoda.md).
+The instructions below describe the process of data transfer via icommands (recommended method). To tranfer data via webdav view this [page](./rclone_yoda.md).  
+
 When you have a Yoda account and icommands are installed on the HPC system, you have to follow the following steps (steps are elaborated below) to synchronize data:
 
 1. Make a config file
