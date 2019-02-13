@@ -16,12 +16,12 @@ Step 1 only needs to be performed once. The other steps need to be performed eve
 
 You may need help from your datamanager or contact Yoda support to obtain the information needed for the config file.
 
-In the home directory of your HPC system, make a directory called .irods
+From the home directory of your HPC system, go to the hidden directory called '.irods'
 
 ```
-mkdir .irods
 cd .irods
 ```
+If the directory does not exist, create it using `mkdir .irods`.
 
 In this directory, make a file named `irods_environment.json`.
 
