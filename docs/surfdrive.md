@@ -107,7 +107,7 @@ By default, multiple files are transferred in parallel. You can control the numb
 ```
 E.g:
 ```
-rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -c --checkers=16 --transfers=16 -Pv
+rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -c --checkers=8 --transfers=8 -Pv
 ```
 
 To synchronize in opposite direction: 
@@ -115,6 +115,13 @@ To synchronize in opposite direction:
 ```
 rclone sync ./Mysharedfolder surfdrive:Mysharedfolder -cPv
 ```
+When transferring large files (> 5 GB) to Surfdrive, errors may occur related to timeout of the connection. It is possible to control the timeout with the `--timeout` option. 
+
+E.g. 
+```
+rclone sync ./Mysharedfolder surfdrive:Mysharedfolder -cPv --timeout=100m
+```
+
 >It is recommended to create separate input and output folders on your HPC system. An input folder for files that are sent from storage to HPC before running a job and output for files that are sent from HPC to storage. You can consider creating bash scripts for the synchronization commands in these folder to reduce the propability of mixing up sources and destinations, which would result in data loss.
 
 ## Job scripts
