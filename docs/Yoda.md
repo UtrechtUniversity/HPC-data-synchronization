@@ -99,7 +99,7 @@ irsync -rKV /my_hpc_folder/ i:myfolder
 > note the '/' at the end of /my_hpc_folder/ that is not used in the command above.
 
 ### Parallel transfer
-With icommands it is possible to transfer individual files in parallel using multiple ports. The flag `-N` can be used to control the number of parallel threads. When not specified the server decides the number of threads. For large files this number is 16 threads by default. 
+With icommands it is possible to transfer individual files in parallel using multiple ports. The flag `-N` can be used to control the number of parallel threads (only recommended in very specific situations). When not specified the server decides a default number of threads. For large files this number can be e.g. 16 threads. 
 
 At the time of writing, parallel transfer is not possible on Lisa. For this reason the flag `-N 0` should be included when transferring files to and from Lisa:
 
