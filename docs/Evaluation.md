@@ -1,6 +1,6 @@
 # Evaluation of storage and transfer tools
 
-In our test procedure we have evaluated three types of storage tools (see below) that can be used as 'central storage facility' in a HPC workflow (see previous [section](./workflow.md)). All types have their own advantages and therefore cover a wide range of possible use cases, from researchers that just need a little more calculation power compared to their own working station, to researchers that work on very computationally expensive or data intensive tasks, to researchgroups that are generating terabytes of data on a frequent basis. Below we provide a short description of the storage tools and evaluation of their performance in terms of data transfer speed and their ease of use.
+In our test procedure we have evaluated data transfer to and from three types of storage tools (see below) that can be used as 'central storage facility' in a HPC workflow (see previous [section](./workflow.md)). All types have their own advantages and therefore cover a wide range of possible use cases, from researchers that just need a little more calculation power compared to their own working station, to researchers that work on very computationally expensive or data intensive tasks, to researchgroups that are generating terabytes of data on a frequent basis. Below we provide a short description of the storage tools and evaluation of their performance in terms of data transfer speed and their ease of use.
 
 To test the transfer speed we evaluated the transfer speed of a few different scenarios ranging from many small files to a few big files:  
 * 1000 files of 1 MB
@@ -16,7 +16,7 @@ We evaluated transfer speeds between (to and from) several storage platforms (el
 
 
 ## Yoda
-For an introduction to Yoda the reader is referred to [this page](https://yoda.sites.uu.nl/home/introduction-to-yoda-2/). In short: Yoda is based on iRODS which is software to manage data and metadata. Yoda has multiple components areas available to the user. One is a research area where data can be stored that still needs to be analyzed. Furthermore, there is a Vault, where data can be securely stored for a longer period. 
+For an introduction to Yoda the reader is referred to [this page](https://yoda.sites.uu.nl/home/introduction-to-yoda-2/). In short: Yoda is based on iRODS which is software to manage data and metadata. Yoda has multiple components (or areas) available to the user. One is a research area where data can be stored that still needs to be analyzed. Furthermore, there is a Vault, where data can be securely stored for a longer period. 
 It is possible to store very large amounts of data on Yoda, but also small datasets can be transferred to and from local working stations and HPC environments for analyses, which makes Yoda a very versatile tool that is suitable for a full range of users from researchers that just started working with large datasets and high performance computing to research groups that work with very large datasets. 
 
 **Data Transfer**  
@@ -34,6 +34,9 @@ In the table below you can see the transfer speeds for the different test scenar
 
 <img src="./pictures/irods.png" alt="alt text" width="322" height="320">
 
+> please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
+
+
 ## Surfdrive and other cloud storage platforms
 
 Many people use cloud storage platforms like Surfdrive, Dropbox, Onedrive or Google Drive. On these platforms, a user typically gets a certain amount of storage space for free. For additional storage space the user needs a paid premium account. At the time of writing, employees of the UU have access to a [Surfdrive](https://www.surfdrive.nl/) account with 250 GB of storage space. 
@@ -45,7 +48,7 @@ The recommended tool for data transfer between cloud storage platforms and HPC s
 
 With Rclone, multiple files can be transferred in parallel (e.g. 16 files at the same time), which results in high transfer speeds when transferring multiple files.
 
-Some issues occur when transferring large files to and from HPC platforms using Rclone. This is due to time-outs when the transfer time exceeds 1 hour. Therefore we couldn't test the 1 * 100 GB scenario. It is expected that these issues will be solved in the near future.
+Some issues occur when transferring large files to and from HPC platforms using Rclone. This is due to a time-outs of the connection when the transfer time exceeds a certain amount of time. Therefore we couldn't test the 1 * 100 GB scenario. It is expected that these issues will be solved in the near future.
 
 More background on Rclone and instructions for usage of Rclone for several cloud storage platforms can be found [here](./surfdrive.md).
 
@@ -54,6 +57,8 @@ Other options for transfer include: manual drag-and-drop transfer using [Winscp]
 In the table below you can see the transfer speeds between surfdrive and Lisa/UBC for the different test scenarios in MB/s:
 
 <img src="./pictures/surfdr.png" alt="alt text" width="613" height="325">
+
+> please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
 
 ## SURFsara Data Archive
 
@@ -69,6 +74,8 @@ Rclone can be used to exchange data between other HPC platforms and the staging 
 The reported transfer speeds below are between the staging area of the Data Archive and the HPC platforms in MB/s. Exchange between staging area and tape robot is unpredictable and not tested.
 
 <img src="./pictures/archive.png" alt="alt text" width="322" height="320">
+
+> please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
 
 
 ## Links
