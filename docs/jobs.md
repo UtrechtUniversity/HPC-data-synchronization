@@ -109,25 +109,25 @@ Job scripts for UBC are similar except for the first few lines:
 # MAIN BODY    
 # Synchronize input data to HPC
 
-mkdir input  # make a folder where all input data is stored
+mkdir /hpc/group/user/input  # make a folder where all input data is stored
 
 export PATH=${HOME}/rclone-v1.45-linux-amd64/:${PATH}  # set path to newest rclone version
 rclone version
 
-rclone sync surfdrive:myinputfolder  ./input -cv  # one-way sync folders
+rclone sync surfdrive:myinputfolder  /hpc/group/user/input -cv  # one-way sync folders
 
 echo Transfer input done
 
 # Perform tasks
 
-mkdir output
-cp ./input/* ./output/
+mkdir /hpc/group/user/output
+cp /hpc/group/user/input/* /hpc/group/user/output/
 
 sleep 10
 
 # Synchronize output data back to storage
 
-rclone sync ./output surfdrive:myoutputfolder -cv
+rclone sync /hpc/group/user/output surfdrive:myoutputfolder -cv
 
 echo End of Job
 ```
