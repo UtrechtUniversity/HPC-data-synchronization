@@ -4,7 +4,7 @@ A synchronization command can be incorporated in a shell script or a job script 
 
 ### Lisa
 
-If you work with data volumes of a couple of Gigabytes or less, and reading and writing of data is not a main task in your workflow, you can transfer the data to your 'home file system'. This is the file system you have available upon login to Lisa. However, when working with large data volumes and reading and writing of data becomes a significant part of your workflow it may be better to use the scratch file system on the compute nodes. More info about the filesystems on Lisa can be found [here](https://userinfo.surfsara.nl/systems/lisa/filesystems). Examples of these 2 methods are provided below.
+If you work with data volumes of a few of Gigabytes or less, and reading and writing of data is not a main task in your workflow, you can transfer the data to the 'home file system' of Lisa. This is the file system you have available upon login at Lisa. However, when working with large data volumes and reading and writing of data becomes a significant part of your workflow it may be better to use the scratch file system on the compute nodes. More info about the filesystems on Lisa can be found [here](https://userinfo.surfsara.nl/systems/lisa/filesystems). Examples of these 2 methods are provided below.
 
 **Home file system**
 
@@ -22,6 +22,7 @@ Below an example job script using Surfdrive and Rclone.
     # When a node is available, the system logins at that node as the user who has submitted this batch script
     # The following commands will be executed on behalf of the user
     
+# MAIN BODY    
 # Synchronize input data to HPC
 
 mkdir input  # make a folder where all input data is stored
@@ -93,6 +94,49 @@ rclone sync "$TMPDIR"/output/ surfdrive:myoutputfolder
 echo End of Job
 ```
 
+### UBC
+
+Job scripts for UBC are similar except for the first few lines:
+
+
+```
+#!/bin/bash
+
+#$ -cwd       # execute the job from the current working directory.
+#$ -M <email address of user>
+#$ -m beas    # notify by e-mail in case of the following events: Begin, End, Abort, Suspend. 
+
+# MAIN BODY    
+# Synchronize input data to HPC
+
+mkdir input  # make a folder where all input data is stored
+
+export PATH=${HOME}/rclone-v1.45-linux-amd64/:${PATH}  # set path to newest rclone version
+rclone version
+
+rclone sync surfdrive:myinputfolder  ./input -cv  # one-way sync folders
+
+echo Transfer input done
+
+# Perform tasks
+
+mkdir output
+cp ./input/* ./output/
+
+sleep 10
+
+# Synchronize output data back to storage
+
+rclone sync ./output surfdrive:myoutputfolder -cv
+
+echo End of Job
+```
+> In the above script:
+>1. fill in your email address on the indicated place.
+>2. check whether the rclone version is the same as the version you installed (see [this manual](./surfdrive))
+>3. if necessary, change the rclone paths to <name remote in rclone config>:<surfdrive folder>
+
+When using Yoda or the Data Archive, the transfer commands in the above scripts need to be replaced by the appropriate commands for these platforms. Example scripts for using [Yoda](../scripts/transferjob_yoda) and [Archive](../scripts/transferjob_archive) can be found following the links. Note that when using 'icommands' for transferring data to and from Yoda, the `iinit` command needs to be issued at the command line to generate a password for connecting before submitting the job.
 
 ## Links
 
