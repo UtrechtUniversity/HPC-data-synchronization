@@ -25,7 +25,7 @@ Below an example job script using Surfdrive and Rclone.
 # MAIN BODY    
 
 # Synchronize scripts
-# git clone http:// ...
+# git clone https:// ...
 
 # Synchronize input data to HPC
 
@@ -79,7 +79,7 @@ When using the scratch file system, simply use the environment variable `"$TMPDI
 # MAIN BODY    
 
 # Synchronize scripts
-# git clone http:// ...
+# git clone https:// ...
     
 mkdir "$TMPDIR"/input  # make a folder where all input data is stored
 
@@ -118,7 +118,7 @@ Job scripts for UBC are similar except for the first few lines:
 # MAIN BODY    
 
 # Synchronize scripts
-# git clone http:// ...
+# git clone https:// ...
 
 # Synchronize input data to HPC
 
