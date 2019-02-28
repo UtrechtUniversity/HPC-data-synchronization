@@ -23,6 +23,10 @@ Below an example job script using Surfdrive and Rclone.
     # The following commands will be executed on behalf of the user
     
 # MAIN BODY    
+
+# Synchronize scripts
+# git clone http:// ...
+
 # Synchronize input data to HPC
 
 mkdir input  # make a folder where all input data is stored
@@ -72,6 +76,11 @@ When using the scratch file system, simply use the environment variable `"$TMPDI
     # When a node is available, the system logins at that node as the user who has submitted this batch script
     # The following commands will be executed on behalf of the user
     
+# MAIN BODY    
+
+# Synchronize scripts
+# git clone http:// ...
+    
 mkdir "$TMPDIR"/input  # make a folder where all input data is stored
 
 # Synchronize input data to HPC
@@ -107,6 +116,10 @@ Job scripts for UBC are similar except for the first few lines:
 #$ -m beas    # notify by e-mail in case of the following events: Begin, End, Abort, Suspend. 
 
 # MAIN BODY    
+
+# Synchronize scripts
+# git clone http:// ...
+
 # Synchronize input data to HPC
 
 mkdir /hpc/group/user/input  # make a folder where all input data is stored
