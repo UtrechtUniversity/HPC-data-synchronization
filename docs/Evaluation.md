@@ -33,7 +33,7 @@ Other options for transfer include: webdav connection using [Rclone](https://rcl
 
 In the table below you can see the transfer speeds for the different test scenarios in MB/s. Note that the transfer speeds between Yoda and Lisa are not reported. This is due to a technical issue with parallel transfer. Transfer over 1 thread is possible but is much slower than what can be expected when the issue is solved.
 
-<img src="./pictures/irods.png" alt="alt text" width="322" height="320">
+<img src="./pictures/irods2.png" alt="alt text" width="307" height="326">
 
 > please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
 
