@@ -10,6 +10,8 @@ When you have a Yoda account and icommands are installed on the HPC system, you 
 3. Initialize connection to iRODS
 4. Submit Synchronization commands
 
+Icommands are installed on the UBC and Lisa clusters. When you need to install icommands on a different system, check the instructions on [this page](./install_icommands.md).
+
 Step 1 only needs to be performed once. The other steps need to be performed every HPC session.
 
 ### Step 1:  Make a config file (first time only)
