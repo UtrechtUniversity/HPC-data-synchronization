@@ -49,9 +49,9 @@ Copy and paste the text below to the file and fill in the fields marked with '< 
 ```
 Save and close the file.
 
-### Step 2: Load icommands (not required at UBC cluster)
+### Step 2: Load icommands when needed (not required at UBC cluster)
 
-Load icommands on Lisa as follows:
+On some systems (such as Lisa) it is necessary to activate icommands first by using the `module load` command. Load icommands on Lisa as follows:
 
 ```
 module load icommands
