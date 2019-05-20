@@ -51,7 +51,7 @@ Save and close the file.
 
 ### Step 2: Load icommands when needed (not required at UBC cluster)
 
-On some systems (such as Lisa) it is necessary to activate icommands first by using the `module load` command. Load icommands on Lisa as follows:
+On some systems (such as Lisa) it is necessary to activate icommands first by using the `module load` command. You can type `iinit` to test this. If you get the response `iinit: command not found`, you need to load icommands first (or install icommands), otherwise you can continue with step 3. Load icommands on Lisa as follows:
 
 ```
 module load icommands
