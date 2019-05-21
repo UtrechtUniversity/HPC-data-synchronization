@@ -33,7 +33,7 @@ In the table below you can see the transfer speeds for the different test scenar
 
 > please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
 
-**Local availability of Yoda data** 
+**Local availability of Yoda data**  
 The typical way to get access to your data on your local working station is to mount your Yoda usergroups as a remote network drive on the local working station ([instructions](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows/)). This mount is visible as a network drive in your windows explorer. However, when you want to do computationally expensive operations on your data on your local working station, you may run into errors; the data is still stored remotely and therefore not accessible fast enough for certain calculations. A workaround for such issues is to transfer the files to your local working station manually by 'drag-and-drop' files from your mounted network drive or using a client like Cyberduck or icommands. Visit [this page](./Yoda_local.md) for instructions on how to use clients like cyberduck and icommands for data transfer to your local working station. 
 
 ## Surfdrive and other cloud storage platforms
