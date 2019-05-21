@@ -27,16 +27,14 @@ With icommands, individual files are transferred over multiple threads, which re
 
 More background on icommands and instructions for usage of icommands can be found [here](./Yoda.md).
 
-For availability of data on your local working station, it is possible to mount your Yoda usergroups as a remote network drive on the local working station ([instructions](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows/)). This mount is visible as a network drive in your windows explorer. However, when you want to do calculations with your data on your local working station, you may run into errors; the data is stored remotely and therefore not always directly accessible for calculations. To solve these issues, you need to tranfer the file to your local working station. First browse to the file location on the network drive and copy-paste it to a local folder. It is also possible to synchronize a Yoda folder with a local folder using e.g. Cyberduck or WinSCP (find instructions for Cyberduck at the bottom of  [this website](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows-using-cyberduck/)). 
-
-Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
-
 In the table below you can see the transfer speeds for the different test scenarios in MB/s.  
 
 <img src="./pictures/irods2.png" alt="alt text" width="307" height="326">
 
 > please note that these values are realized at a particular moment and not based on a highly standardized test procedure. The values can be regarded indicative, but deviations will occur depending on many factors.
 
+**Local availability of Yoda data** 
+The typical way to get access to your data on your local working station is to mount your Yoda usergroups as a remote network drive on the local working station ([instructions](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows/)). This mount is visible as a network drive in your windows explorer. However, when you want to do computationally expensive operations on your data on your local working station, you may run into errors; the data is still stored remotely and therefore not accessible fast enough for certain calculations. A workaround for such issues is to transfer the files to your local working station manually by 'drag-and-drop' files from your mounted network drive or using a client like Cyberduck or icommands. Visit [this page](./Yoda_local.md) for instructions on how to use clients like cyberduck and icommands for data transfer to your local working station. 
 
 ## Surfdrive and other cloud storage platforms
 
