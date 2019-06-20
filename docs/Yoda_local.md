@@ -74,10 +74,24 @@ Double click the updated irods.cyberduckprofile file to open it as a Cyberduck b
 3. Update the Username field with your iRODS user name.
 4. In the More Options section, update the "Transfer Files" setting, selecting "Open multiple connections".
 5. Close the bookmark window.
+6. Now under the 'bookmarks' tab, double click the created bookmark to start the connection. Right click a folder you want to work on 
+
+
+The steps above describe the configuration process on a windows pc. It is also possible to use use cyberduck on other operating systems or via windows command line. 
+
+Check the [instructions page](https://trac.cyberduck.io/wiki/help/en/howto/cli) of Cyberduck to find specific installation and operation instructions.
+The operating system specific paths for installation of the cyberduck profiles can be found [here](https://trac.cyberduck.io/wiki/help/en/howto/cli#Profiles).
+
+
+## Icommands
+It is possible to use icommands for file transfer 
+No windows installation, install windows subsystem
+
+Install Icommands 
 
 
 
 
- It is also possible to synchronize a Yoda folder with a local folder using e.g. Cyberduck or WinSCP (find instructions for Cyberduck at the bottom of  [this website](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/create-a-network-share-on-windows-using-cyberduck/)). 
 
-Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/) or [Cyberduck](https://cyberduck.io/).
+
+Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/).
