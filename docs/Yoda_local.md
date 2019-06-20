@@ -2,7 +2,9 @@
 
 To run analysis on your local working station (e.g. laptop) with data that is stored in Yoda, you can map yoda as a network drive on your working station (find instructions [here](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/)). This drive can be accessed via a file explorer or directly within your analysis software. In some cases, it may be that this method is not suitable for your use case (e.g. when performing large operations on big data files). Creating a local copy of your data may help to solve this problem.
 
-Transferring data between Yoda and your local working station can be done in several ways. Three ways are described below that differ in terms of transfer speed and intuitiveness. The reported transfer speeds below are meant illustrative and are realisations on a laptop with cable connection at the university. Results can be treated as indications but could deviate largely in a different setup, e.g. depending on network adapter, internet connection or specific settings related to data transfer.
+Transferring data between Yoda and your local working station can be done in several ways. We describe three methods: using a mapped network drive, using cyberduck or using icommands. These three options differ in terms of transfer speed and intuitiveness. 
+
+
 
 ## Network drive
 Simply browse to the file location on the network drive and copy-paste it to a local folder. This method is intuitive but may also be tedious when you need many files, and can be prone to errors.
