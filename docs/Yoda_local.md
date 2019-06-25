@@ -29,7 +29,7 @@ If bash is not installed you will be asked to type `y` and press Enter to downlo
 
 Next you need to create a default UNIX user account. Type the username that you would like to use. 
 
-When you succesfully installed bash, start the bash command line and install icommands using the instructions on [this page](./install_icommands.md). From there, continue with configuration of the icommands [instructions here](./Yoda.md).
+When you succesfully installed bash, start the bash command line and install icommands using the instructions on [this page](./install_icommands.md). From there, continue with configuration of the icommands ([instructions here](./Yoda.md)).
 
 
 ## Cyberduck
