@@ -1,13 +1,36 @@
 # Data transfer between Yoda and your local workingstation
 
-To run analysis on your local working station (e.g. laptop) with data that is stored in Yoda, you can map yoda as a network drive on your working station (find instructions [here](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/)). This drive can be accessed via a file explorer or directly within your analysis software. In some cases, it may be that this method is not suitable for your use case (e.g. when performing large operations on big data files). Creating a local copy of your data may help to solve this problem.
+To run analysis on your local working station (e.g. laptop) with data that is stored in Yoda, you can map yoda as a network drive on your working station (find instructions [here](https://yoda.sites.uu.nl/home/how-to-quick-guide/create-a-network-share/)). This drive can be accessed via a file explorer or directly within your analysis software. In some cases, it may be that accessing your data directly from your network drive with analysis software is not suitable for your use case (e.g. when performing large operations on big data files). Creating a local copy of your data may help to solve this problem.
 
-Transferring data between Yoda and your local working station can be done in several ways. We describe three methods: using a mapped network drive, using cyberduck or using icommands. These three options differ in terms of transfer speed and intuitiveness. 
-
-
+Transferring data between Yoda and your local working station can be done in several ways. We describe three methods: using a mapped network drive, using the command line tool icommands, or manual synchronization using cyberduck. These three options differ in terms of transfer speed and intuitiveness. 
 
 ## Network drive
-Simply browse to the file location on the network drive and copy-paste it to a local folder. This method is intuitive but may also be tedious when you need many files, and can be prone to errors.
+
+Simply browse to the file location on the network drive and copy-paste it to a local folder. This method is intuitive but may also be tedious when you need many files, and can be prone to user errors.
+
+## Icommands
+
+Icommands is the standard tool for transferring data to and from Yoda using a command line interface. On linux you can install icommands using the instructions on [this page](./install_icommands.md).
+
+On Mac an Windows it is only possible to use icommands via a linux subsystem or a virtual machine.
+
+In recent windows versions, it is possible to install a "Windows Subsystem for Linux" (or WSL). In order to do this, one has to turn on WSL. Open PowerShell and issue the following command:
+
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+Restart your system after you have activated WSL.
+
+Next, open Start and search for `bash.exe` and press Enter. 
+
+If bash is already installed, you will enter bash command line, where you can issue bash commands to install icommands (go to [this page](./install_icommands.md) for installation instructions).
+
+If bash is not installed you will be asked to type `y` and press Enter to download and install Bash from the Windows Store.
+
+Next you need to create a default UNIX user account. Type the username that you would like to use. 
+
+When you succesfully installed bash, start the bash command line and install icommands using the instructions on [this page](./install_icommands.md). From there, continue with configuration of the icommands [instructions here](./Yoda.md).
+
 
 ## Cyberduck
 Cyberduck is a handy open source tool for file transfer between remote platforms (such as Yoda and High Performance Computing platforms) and your local working station.
@@ -84,16 +107,8 @@ The steps above describe the configuration process on a windows pc. It is also p
 Check the [instructions page](https://trac.cyberduck.io/wiki/help/en/howto/cli) of Cyberduck to find specific installation and operation instructions.
 The operating system specific paths for installation of the cyberduck profiles can be found [here](https://trac.cyberduck.io/wiki/help/en/howto/cli#Profiles).
 
-
-## Icommands
-It is possible to use icommands for file transfer 
-No windows installation, install windows subsystem
-
-Install Icommands 
-
-
-
-
-
-
 Other options for transfer include: webdav connection using [Rclone](https://rclone.org/) or manual drag-and-drop transfer using [Winscp](https://winscp.net/).
+
+## Links
+[Back to evaluation of storage and transfer tools](./Evaluation.md)
+
