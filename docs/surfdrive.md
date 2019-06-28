@@ -58,7 +58,7 @@ rclone config
 You will enter an interactive menu. On separate pages, we provide instructions for completing the interactive menu for different storage options:
 
 [Config file surfdrive](./sd.md)  
-[Config file research drive](./rd.md)
+[Config file research drive](./rd.md)  
 [Config file OneDrive](./onedrive.md)  
 [Config file U: network drive](./udrive)  
 
