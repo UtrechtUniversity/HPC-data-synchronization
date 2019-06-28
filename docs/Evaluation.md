@@ -42,6 +42,8 @@ Many people use cloud storage platforms like Surfdrive, Dropbox, Onedrive or Goo
 
 In general, the abovementioned cloud storage platforms are very user friendly. The user has to install an application on the local working station that takes care of synchronization of files and folders between storage platform and any device where the user has installed the application. This synchronization may take a significant amount of time, depending on file size and internet connection. This functionality is therefore very useful for users with many small files, and perhaps less useful for users working with large data volumes. 
 
+Some of the storage platform perform really well in a HPC workflow, with reasonably simple connection possibilities and high transfer speeds.
+
 **Data Transfer**  
 The recommended tool for data transfer between cloud storage platforms and HPC systems is [Rclone](https://rclone.org/). Rclone is open source, and it is very easy to install by the user on the UBC cluster or other HPC platforms (installation instruction provided [here](./surfdrive.md)). Rclone is already installed on the Lisa cluster.
 
