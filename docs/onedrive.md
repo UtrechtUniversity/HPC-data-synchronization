@@ -1,24 +1,75 @@
 ## Rclone interactive menu instructions for OneDrive
 
-The following instructions will guide you through the Rclone interactive menu to make a config file for Onedrive.
+Setting up synchronization between onedrive and HPC with Rclone is a complicated process and requires quite a few steps.  
+You need a web browser for authentication, but a browser is generally not available on Lisa and UBC.
+To be able to authenticate via a browser one has to install Rclone on a local working station, and to make it even more complicated, when working on Windows, one has to install a Windows Subsystem for Linux, to be able to install and operate Rclone.
+The upside is that this procedure has to be performed once (and potentially renewed when passwords expire), after which Onedrive works quite fluently.
+
+The following instructions will guide you through the process of making a config file for Onedrive.
+
+passwords expire), after which Onedrive works quite fluently.
+
+## Steps
+
+### Step 0 Install Ubuntu (on Windows systems only)
+
+When working on a Windows system, you have to enable Windows Subsystem for Linux (WSL).
+
+To do this: Open Windows PowerShell and issue the following command:
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+
+Restart your system after you have activated WSL.
+
+Next, open Start and search for `Ubuntu` and press Enter to open or install Ubuntu.
+
+Alternatively, Install Ubuntu from the Microsoft App Store.
+
+### Step 1 Install Rclone
+
+**Using linux or Ubuntu under Windows**
+
+Install Rclone with the following commands:
+
+```
+$    wget https://downloads.rclone.org/rclone-current-linux-amd64.zip
+$    unzip rclone-current-linux-amd64.zip
+```
+Use the `ls` command to check which version of rclone you have. Use this version number in the command below (i.e. change 1.48 in the command below to your version number if you have a different version). 
+
+```
+$    export PATH=${HOME}/rclone-v1.48-linux-amd64/:${PATH}
+```
+
+**Using mac**  
+
+Follow instructions [here](https://rclone.org/downloads/).
 
 
-First you need to generate ....
+### Step 2 Getting your own Client ID and Key
 
-rclone uses a pair of Client ID and Key shared by all rclone users when performing requests by default. If you are having problems with them (E.g., seeing a lot of throttling), you can get your own Client ID and Key by following the steps below:
+Next, generate your own Client ID and Key for Onedrive by following the steps below:
 
-    Open https://apps.dev.microsoft.com/#/appList, then click Add an app (Choose Converged applications if applicable)
-    Enter a name for your app, and click continue. Copy and keep the Application Id under the app name for later use.
-    Under section Application Secrets, click Generate New Password. Copy and keep that password for later use.
-    Under section Platforms, click Add platform, then Web. Enter http://localhost:53682/ in Redirect URLs.
-    Under section Microsoft Graph Permissions, Add these delegated permissions: Files.Read, Files.ReadWrite, Files.Read.All, Files.ReadWrite.All, offline_access, User.Read.
-    Scroll to the bottom and click Save.
+1.	Open https://apps.dev.microsoft.com/#/appList, then click Add an app (Choose Converged applications if applicable)  
 
+2.	Enter a name for your app, and click continue. Copy and keep the Application Id under the app name for later use.  
 
+3.	Under section Application Secrets, click Generate New Password. Copy and keep that password for later use.  
 
+4.	Under section Platforms, click Add platform, then Web. Enter http://localhost:53682/ in Redirect URLs.  
 
+5.	Under section Microsoft Graph Permissions, Add these delegated permissions: Files.Read, Files.ReadWrite, Files.Read.All, Files.ReadWrite.All, offline_access, User.Read.  
 
-After you have typed `rclone config` (as instructed on previous page), you will see a short list of options:
+6.	Scroll to the bottom and click Save.  
+
+Now the application is complete.  
+
+### Step 3 Generate a config file on your remote machine
+
+In your ssh session to your HPC system: type `rclone config` and press enter.
+
+After you have typed `rclone config`, you will see a short list of options:
 
 ```
 e) Edit existing remote
@@ -37,20 +88,41 @@ You will see similar lists later on in this menu. You select an option by typing
 
 A list appears with different storage types:
 
-3.  Type `24` and press enter for 'webdav'
+3.  Type `18` and press enter for 'onedrive'
 
-4.	Fill in the URL. You can look this up via the web portal of surfdrive. In the top right corner click your account name. Go to settings. In the left panel, click security. At the very bottom of the page there will be a section WebDAV passwords. There is also an URL, something like: https://surfdrive.surf.nl/files/remote.php/nonshib-webdav Use this URL.
+4.	Copy and paste the app ID (step 2) as Client ID  
 
-5.	Before you continue with the Rclone menu, first perform the following step via the web portal of surfdrive. Fill in an app name (e.g. lisa) on the security settings page (same page as previous step) and click “create new app password”. The page will show a username and a password. You will need these in the following steps of the Rclone menu.
+5.	Copy and paste the password (step 2) as Secret  
 
-6.	Select the type of webdav storage system. Type: `2` for Owncloud.
-6.	Type in your user name from surfdrive (this is the username found in the web portal (step 5))
-7.	Select: y) Yes type in my own password
-8.	Type in your password from the web portal and type it in again for confirmation. 
-9.  Skip the Bearer token option by pressing enter.
-9.	Confirm your settings by typing `y`.
+5.	Edit advanced config? Type ‘n’  
 
-**Note: renew tokens ** 
+6.	Use auto config? Type ‘n’  
+
+**Now you will receive a command for authorization.
+The command will look something like this:
+rclone authorize "onedrive" "<Client ID>" "<password>"
+
+7.  Copy and paste the command to your **local command line session** (e.g. Ubuntu under Windows)
+    
+8.	In your local command line session, you will be asked to navigate to `http://127.0.0.1:53682/auth` with your browser. Type the address in your internet browser.
+
+9.	You will see a Microsoft page, where you can select (or you have to login to) your Microsoft account. When everything went correct, you will see the message: “Success! Please go back to Rclone”
+
+10.	Go back to your **local command line session**. You will see that a token has been generated that has to be copied to your **remote machine** (Lisa/UBC/etc.). Go to your remote machine and paste the token behind: `result>` and press Enter.
+
+11. Next you will see:
+`Choose a number from below, or type in an existing value:`
+    Type `1`
+    
+12.	If all went correct, you will see: 
+```
+Found 1 drives, please select the one you want to use: 
+0: OneDrive
+```
+Type `0`
+
+13.	Type `y` and `y` for the next two questions to finish the menu.
+
 
 
 Go back to the [main instructions page](./surfdrive.md).
