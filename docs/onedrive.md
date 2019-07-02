@@ -7,8 +7,6 @@ The upside is that this procedure has to be performed once (and potentially rene
 
 The following instructions will guide you through the process of making a config file for Onedrive.
 
-passwords expire), after which Onedrive works quite fluently.
-
 ## Steps
 
 ### Step 0 Install Ubuntu (on Windows systems only)
@@ -28,6 +26,7 @@ Alternatively, Install Ubuntu from the Microsoft App Store.
 
 ### Step 1 Install Rclone
 
+
 **Using linux or Ubuntu under Windows**
 
 Install Rclone with the following commands:
@@ -41,6 +40,7 @@ Use the `ls` command to check which version of rclone you have. Use this version
 ```
 $    export PATH=${HOME}/rclone-v1.48-linux-amd64/:${PATH}
 ```
+
 
 **Using mac**  
 
@@ -100,7 +100,7 @@ A list appears with different storage types:
 
 **Now you will receive a command for authorization.
 The command will look something like this:
-rclone authorize "onedrive" "<Client ID>" "<password>"
+rclone authorize "onedrive" "<Client ID>" "<password>"**
 
 7.  Copy and paste the command to your **local command line session** (e.g. Ubuntu under Windows)
     
@@ -110,15 +110,15 @@ rclone authorize "onedrive" "<Client ID>" "<password>"
 
 10.	Go back to your **local command line session**. You will see that a token has been generated that has to be copied to your **remote machine** (Lisa/UBC/etc.). Go to your remote machine and paste the token behind: `result>` and press Enter.
 
-11. Next you will see:
-`Choose a number from below, or type in an existing value:`
+11. Next you will see:  
+`Choose a number from below, or type in an existing value:`  
     Type `1`
     
 12.	If all went correct, you will see: 
 ```
 Found 1 drives, please select the one you want to use: 
 0: OneDrive
-```
+```  
 Type `0`
 
 13.	Type `y` and `y` for the next two questions to finish the menu.
