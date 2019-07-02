@@ -99,8 +99,10 @@ A list appears with different storage types:
 6.	Use auto config? Type ‘n’  
 
 **Now you will receive a command for authorization.
-The command will look something like this:
-rclone authorize "onedrive" "<Client ID>" "<password>"**
+The command will look something like this:**
+```
+rclone authorize "onedrive" "<Client ID>" "<password>"
+```
 
 7.  Copy and paste the command to your **local command line session** (e.g. Ubuntu under Windows)
     
