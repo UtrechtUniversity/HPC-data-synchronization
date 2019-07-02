@@ -27,6 +27,7 @@ Alternatively, Install Ubuntu from the Microsoft App Store.
 ### Step 1 Install Rclone
 
 
+
 **Using linux or Ubuntu under Windows**
 
 Install Rclone with the following commands:
@@ -40,6 +41,7 @@ Use the `ls` command to check which version of rclone you have. Use this version
 ```
 $    export PATH=${HOME}/rclone-v1.48-linux-amd64/:${PATH}
 ```
+
 
 
 **Using mac**  
