@@ -59,6 +59,7 @@ You will enter an interactive menu. On separate pages, we provide instructions f
 
 [Config file surfdrive](./sd.md)  
 [Config file research drive](./rd.md)  
+[Config file OneDrive](./onedrive.md)  
 [Config file U: network drive](./udrive)  
 
 When you have completed the menu, the config file named 'rclone.conf' resides in the folder .config/rclone/ by default.
