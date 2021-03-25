@@ -20,7 +20,7 @@ You will see similar lists later on in this menu. You select an option by typing
 
 A list appears with different storage types:
 
-3.  Type `24` and press enter for 'webdav'
+3.  Type `34` and press enter for 'webdav'
 
 4.	Fill in the URL. You can look this up via the web portal of surfdrive. In the top right corner click your account name. Go to settings. In the left panel, click security. At the very bottom of the page there will be a section WebDAV passwords. There is also an URL, something like: https://surfdrive.surf.nl/files/remote.php/nonshib-webdav Use this URL.
 
