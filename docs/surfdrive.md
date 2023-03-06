@@ -104,11 +104,11 @@ rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -cPv
 
 By default, multiple files are transferred in parallel. You can control the number of parallel threads as well as the number of checkers that calculate the checksums (to check whether the copied files are equal on both ends). Use the following commands:
 ```
---checkers=8 --transfers=8
+--checkers=16 --transfers=16
 ```
 E.g:
 ```
-rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -c --checkers=8 --transfers=8 -Pv
+rclone sync surfdrive:Mysharedfolder ./Mysharedfolder -c --checkers=16 --transfers=16 -Pv
 ```
 
 To synchronize in opposite direction: 
